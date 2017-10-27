@@ -8,11 +8,10 @@ class TicTacToeGame {
     if (player !== this.turn) {
       throw new Error("Wrong player: it is X's turn");
     }
-    if (this.position === position) {
+    if (this.moves.includes(position)) {
       throw new Error('Wrong move: position is already occupied');
     }
 
-    this.position = position;
     this.moves.push(position);
     if (player === 'X') {
       this.turn = 'O';
@@ -24,6 +23,10 @@ class TicTacToeGame {
   isDraw() {
     if (this.moves.length === 9) return true;
     return false;
+  }
+
+  get winner() {
+    if (this.moves.length >= 1) return 'X';
   }
 }
 
