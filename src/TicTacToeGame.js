@@ -1,6 +1,7 @@
 class TicTacToeGame {
-  play() {
-    throw new Error("Wrong player: it is X's turn");
+  play(player) {
+    if (player === 'O')
+      {throw new Error("Wrong player: it is X's turn");}
   }
 }
 
