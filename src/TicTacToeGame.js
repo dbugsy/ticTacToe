@@ -1,6 +1,7 @@
 class TicTacToeGame {
   constructor() {
     this.turn = 'X';
+    this.moves = [];
   }
 
   play(player, position) {
@@ -12,6 +13,7 @@ class TicTacToeGame {
     }
 
     this.position = position;
+    this.moves.push(position);
     if (player === 'X') {
       this.turn = 'O';
     } else {
@@ -20,7 +22,8 @@ class TicTacToeGame {
   }
 
   isDraw() {
-    return true;
+    if (this.moves.length === 9) return true;
+    return false;
   }
 }
 

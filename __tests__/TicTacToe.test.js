@@ -13,6 +13,12 @@ describe('TicTacToe', () => {
     expect(() => game.play('O', 0)).toThrow(new Error('Wrong move: position is already occupied'));
   });
 
+
+  it('is not a draw unless all positions are occupied', () => {
+    const game = new TicTacToeGame();
+    expect(game.isDraw()).toEqual(false);
+  });
+
   it('is a draw when all 9 positions are occupied', () => {
     const game = new TicTacToeGame();
     game.play('X', 0);
