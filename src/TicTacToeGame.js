@@ -12,7 +12,15 @@ class TicTacToeGame {
     }
 
     this.position = position;
-    if (player === 'X') { this.turn = 'O'; }
+    if (player === 'X') {
+      this.turn = 'O';
+    } else {
+      this.turn = 'X';
+    }
+  }
+
+  isDraw() {
+    return true;
   }
 }
 
