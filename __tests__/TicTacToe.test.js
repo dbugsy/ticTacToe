@@ -46,4 +46,14 @@ describe('TicTacToe', () => {
     game.play('X', 2);
     expect(game.winner).toEqual('X');
   });
+
+  it('is won when O occupies a horizontal row', () => {
+    game.play('X', 6);
+    game.play('O', 0);
+    game.play('X', 3);
+    game.play('O', 1);
+    game.play('X', 8);
+    game.play('O', 2);
+    expect(game.winner).toEqual('O');
+  });
 });
