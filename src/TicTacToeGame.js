@@ -24,7 +24,7 @@ class TicTacToeGame {
     return this.newMoves.every(position => position !== undefined);
   }
 
-  get winner() {
+  winner() {
     if (this.newMoves.slice(0, 2).every(position => position === 'X')) return 'X';
     if (this.newMoves.slice(0, 2).every(position => position === 'O')) return 'O';
   }

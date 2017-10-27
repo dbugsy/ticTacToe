@@ -35,7 +35,7 @@ describe('TicTacToe', () => {
   });
 
   it('has no winner until the game has been won', () => {
-    expect(game.winner).not.toBeDefined();
+    expect(game.winner()).not.toBeDefined();
   });
 
   it('is won when X occupies a horizontal row', () => {
@@ -44,7 +44,7 @@ describe('TicTacToe', () => {
     game.play('X', 1);
     game.play('O', 8);
     game.play('X', 2);
-    expect(game.winner).toEqual('X');
+    expect(game.winner()).toEqual('X');
   });
 
   it('is won when O occupies a horizontal row', () => {
@@ -54,6 +54,6 @@ describe('TicTacToe', () => {
     game.play('O', 1);
     game.play('X', 8);
     game.play('O', 2);
-    expect(game.winner).toEqual('O');
+    expect(game.winner()).toEqual('O');
   });
 });
