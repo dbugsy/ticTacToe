@@ -1,18 +1,18 @@
 class TicTacToeGame {
   constructor() {
     this.turn = 'X';
-    this.newMoves = Array(9).fill();
+    this.moves = Array(9).fill();
   }
 
   play(player, position) {
     if (player !== this.turn) {
       throw new Error("Wrong player: it is X's turn");
     }
-    if (this.newMoves[position]) {
+    if (this.moves[position]) {
       throw new Error('Wrong move: position is already occupied');
     }
 
-    this.newMoves[position] = player;
+    this.moves[position] = player;
     if (player === 'X') {
       this.turn = 'O';
     } else {
@@ -21,12 +21,12 @@ class TicTacToeGame {
   }
 
   isDraw() {
-    return this.newMoves.every(position => position !== undefined);
+    return this.moves.every(position => position !== undefined);
   }
 
   winner() {
-    if (this.newMoves.slice(0, 2).every(position => position === 'X')) return 'X';
-    if (this.newMoves.slice(0, 2).every(position => position === 'O')) return 'O';
+    if (this.moves.slice(0, 2).every(position => position === 'X')) return 'X';
+    if (this.moves.slice(0, 2).every(position => position === 'O')) return 'O';
   }
 }
 
